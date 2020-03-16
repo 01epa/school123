@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:shrinkColumns="*"
+    android:stretchColumns="*">
+
+    <TableRow android:layout_width="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:width="80dp"
+            android:gravity="start"
+            android:text="@string/teacher"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+        <TextView
+            android:id="@+id/subject_teacher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:width="80dp"
+            android:gravity="start"
+            android:textAppearance="?attr/textAppearanceListItem" />
+    </TableRow>
+
+    <TableRow android:layout_width="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:width="80dp"
+            android:gravity="start"
+            android:text="@string/average_mark"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+        <TextView
+            android:id="@+id/subject_average"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:width="80dp"
+            android:gravity="start"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+    </TableRow>
+
+    <TableRow android:layout_width="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:width="80dp"
+            android:gravity="start"
+            android:text="@string/final_mark"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+        <TextView
+            android:id="@+id/subject_final_mark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:width="80dp"
+            android:gravity="start"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+    </TableRow>
+
+    <TableRow android:layout_width="match_parent">
+
+        <TextView
+            android:id="@+id/marks_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:layout_span="2"
+            android:width="80dp"
+            android:gravity="center_horizontal"
+            android:text="@string/marks"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow android:layout_width="match_parent">
+
+        <TableLayout
+            android:id="@+id/marks_details_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="2"
+            android:shrinkColumns="*"
+            android:stretchColumns="*" />
+    </TableRow>
+
+    <TableRow android:layout_width="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_span="2">
+
+            <TableLayout
+                android:id="@+id/marks_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:shrinkColumns="*"
+                android:stretchColumns="*" />
+        </ScrollView>
+    </TableRow>
+</TableLayout>

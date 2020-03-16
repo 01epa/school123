@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.UsersActivity">
+    <item
+        android:id="@+id/menu_user_login"
+        android:icon="@drawable/login_user_icon"
+        android:title="Дневник"
+        app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/menu_user_edit"
+        android:icon="@drawable/edit_user_icon"
+        android:title="Изменить"
+        app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/menu_user_remove"
+        android:icon="@drawable/remove_user_icon"
+        android:title="Удалить"
+        app:showAsAction="ifRoom|withText" />
+</menu>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:shrinkColumns="*"
+    android:stretchColumns="*">
+
+    <TableRow android:layout_width="fill_parent">
+
+        <TextView
+            android:id="@+id/message_date"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:width="70dp"
+            android:gravity="start"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+        <TextView
+            android:id="@+id/message_author"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:width="100dp"
+            android:gravity="start"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+        <TextView
+            android:id="@+id/message_text"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:width="180dp"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:maxLines="5"
+            android:textAppearance="?attr/textAppearanceListItem" />
+    </TableRow>
+</TableLayout>

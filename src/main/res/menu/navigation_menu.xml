@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/marks"
+            android:title="Оценки" />
+        <item
+            android:id="@+id/journal"
+            android:title="Дневник" />
+        <item
+            android:id="@+id/messages"
+            android:title="Сообщения" />
+        <item
+            android:id="@+id/student"
+            android:title="Об ученике" />
+    </group>
+</menu>

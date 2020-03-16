@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/student_swipe_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="*"
+        android:stretchColumns="*">
+
+        <TableRow android:layout_width="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:width="60dp"
+                android:gravity="start"
+                android:text="Ученик"
+                android:textAppearance="?attr/textAppearanceListItem" />
+
+            <TextView
+                android:id="@+id/student_student"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:width="250dp"
+                android:gravity="start"
+                android:textAppearance="?attr/textAppearanceListItem" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:background="@color/lgray">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:width="60dp"
+                android:gravity="start"
+                android:text="Школа"
+                android:textAppearance="?attr/textAppearanceListItem" />
+
+            <TextView
+                android:id="@+id/student_school"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:width="250dp"
+                android:gravity="start"
+                android:textAppearance="?attr/textAppearanceListItem" />
+
+        </TableRow>
+
+        <TableRow android:layout_width="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:width="60dp"
+                android:gravity="start"
+                android:text="Класс"
+                android:textAppearance="?attr/textAppearanceListItem" />
+
+            <TextView
+                android:id="@+id/student_class"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:width="250dp"
+                android:gravity="start"
+                android:textAppearance="?attr/textAppearanceListItem" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:background="@color/lgray">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:width="60dp"
+                android:gravity="start"
+                android:text="Учитель"
+                android:textAppearance="?attr/textAppearanceListItem" />
+
+            <TextView
+                android:id="@+id/student_teacher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:width="250dp"
+                android:gravity="start"
+                android:textAppearance="?attr/textAppearanceListItem" />
+
+        </TableRow>
+
+        <TableRow android:layout_width="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:width="60dp"
+                android:gravity="start"
+                android:text="Версия дневника"
+                android:textAppearance="?attr/textAppearanceListItem" />
+
+            <TextView
+                android:id="@+id/dnevnik_version"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:width="250dp"
+                android:gravity="start"
+                android:textAppearance="?attr/textAppearanceListItem" />
+
+        </TableRow>
+    </TableLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

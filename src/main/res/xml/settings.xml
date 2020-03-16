@@ -1,0 +1,15 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <PreferenceCategory
+        android:key="pref_key_storage_settings"
+        android:title="Оповещение">
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/settings_mark_notification_key"
+            android:summary="Информировать о получении новых оценок"
+            android:title="О новых оценках" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:shrinkColumns="*"
+    android:stretchColumns="*">
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/journal_number"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:width="9dp"
+            android:gravity="start"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+        <TextView
+            android:id="@+id/journal_subject"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:width="100dp"
+            android:gravity="start"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+        <TextView
+            android:id="@+id/journal_task"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:width="150dp"
+            android:gravity="start"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+        <TextView
+            android:id="@+id/journal_marks"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:width="50dp"
+            android:gravity="start"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textStyle="bold" />
+    </TableRow>
+</TableLayout>
