@@ -298,6 +298,7 @@ public class Data implements Serializable {
         if (oldData.loadedJournalWeeks != null) {
             loadedJournalWeeks.addAll(oldData.loadedJournalWeeks);
         }
+        saveDate = new Date();
     }
 
     void clear() {

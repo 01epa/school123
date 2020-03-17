@@ -37,7 +37,7 @@ public class FinalMark implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         FinalMark finalMark = (FinalMark) o;
-        return periodId == finalMark.periodId &&
+        return Objects.equals(periodId, finalMark.periodId) &&
                 subjectId == finalMark.subjectId &&
                 Objects.equals(mark, finalMark.mark);
     }

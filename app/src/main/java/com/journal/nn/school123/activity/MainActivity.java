@@ -60,7 +60,6 @@ import static com.journal.nn.school123.util.CurrentPeriodUtil.getPeriod;
 import static com.journal.nn.school123.util.LoginUtil.getAddress;
 import static com.journal.nn.school123.util.LoginUtil.getCookie;
 import static com.journal.nn.school123.util.LoginUtil.getStudentId;
-import static com.journal.nn.school123.util.LoginUtil.getVersion;
 import static com.journal.nn.school123.util.UpdateUtil.backToUsersActivity;
 import static java.util.Calendar.FRIDAY;
 import static java.util.Calendar.MONDAY;
@@ -341,13 +340,11 @@ public class MainActivity
     }
 
     private void processJournalMenuItem(@NonNull MenuItem item) {
-        Data oldData = IntentHelper.getData(this, userId);
+        Data data = IntentHelper.getData(this, userId);
         Long time = periodJournals.get(item.getItemId());
-        if (oldData.isJournalLoaded(time)) {
+        if (data.isJournalLoaded(time)) {
             initJournalFragment(item, time);
         } else {
-            String version = getVersion(this, userId);
-            Data data = new Data(userId, version);
             RequestQueue requestQueue = Volley.newRequestQueue(this);
             Gson gson = new Gson();
             RequestParameters requestParameters = new RequestParameters(
@@ -430,17 +427,15 @@ public class MainActivity
     }
 
     private void processMarkMenuItem(@NonNull MenuItem item) {
-        Data oldData = IntentHelper.getData(this, userId);
+        Data data = IntentHelper.getData(this, userId);
         String periodId = periodMarks.get(item.getItemId());
-        Map<String, Period> periods = oldData.getPeriods();
+        Map<String, Period> periods = data.getPeriods();
         Period period = periods.get(periodId);
-        if (oldData.isPeriodLoaded(periodId)) {
+        if (data.isPeriodLoaded(periodId)) {
             initMarksFragment(item, period);
         } else {
             RequestQueue requestQueue = Volley.newRequestQueue(this);
             Gson gson = new Gson();
-            String version = getVersion(this, userId);
-            Data data = new Data(userId, version);
             RequestParameters requestParameters = new RequestParameters(
                     data,
                     gson,
