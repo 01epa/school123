@@ -1,7 +1,7 @@
 package com.journal.nn.school123.util;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.journal.nn.school123.pojo.Data;
 import com.journal.nn.school123.pojo.Period;

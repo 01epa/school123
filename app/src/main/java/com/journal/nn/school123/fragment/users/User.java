@@ -1,6 +1,6 @@
 package com.journal.nn.school123.fragment.users;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 public class User {
     @NonNull

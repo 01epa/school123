@@ -1,6 +1,6 @@
 package com.journal.nn.school123.rest.login;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.android.volley.Request;
 import com.android.volley.Response;

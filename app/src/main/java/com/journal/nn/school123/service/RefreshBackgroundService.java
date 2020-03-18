@@ -9,12 +9,13 @@ import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
 import android.media.RingtoneManager;
 import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.NotificationManagerCompat;
-import android.support.v4.app.Person;
-import android.support.v4.content.LocalBroadcastManager;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+import androidx.core.app.Person;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
@@ -36,7 +37,6 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static android.app.Notification.VISIBILITY_PUBLIC;
 import static com.journal.nn.school123.activity.TransferConstants.USER_ID;
 import static com.journal.nn.school123.service.RestartService.RESTART_SERVICE_NAME;
 import static com.journal.nn.school123.util.LoginUtil.getAddress;
@@ -207,7 +207,7 @@ public class RefreshBackgroundService extends IntentService implements SharedPre
                         .setContentTitle(getString(R.string.app_name))
                         .setContentText("Получены новые оценки")
                         .setPriority(NotificationManager.IMPORTANCE_HIGH)
-                        .setVisibility(VISIBILITY_PUBLIC)
+                        .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                         .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
                         .setContentIntent(usersPi);
                 NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);

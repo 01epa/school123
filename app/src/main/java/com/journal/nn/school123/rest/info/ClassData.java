@@ -1,6 +1,6 @@
 package com.journal.nn.school123.rest.info;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.android.volley.VolleyError;
 import com.google.gson.JsonArray;

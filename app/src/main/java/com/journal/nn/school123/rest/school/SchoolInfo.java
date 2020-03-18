@@ -1,6 +1,6 @@
 package com.journal.nn.school123.rest.school;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.android.volley.NetworkResponse;
 import com.android.volley.Response;

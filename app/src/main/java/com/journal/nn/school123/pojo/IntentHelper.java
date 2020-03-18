@@ -2,8 +2,8 @@ package com.journal.nn.school123.pojo;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.util.Base64;
 import android.util.Base64InputStream;
 import android.util.Base64OutputStream;

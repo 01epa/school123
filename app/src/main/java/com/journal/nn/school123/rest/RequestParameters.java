@@ -1,7 +1,6 @@
 package com.journal.nn.school123.rest;
 
-import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;

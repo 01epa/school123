@@ -1,6 +1,6 @@
 package com.journal.nn.school123.rest.info.journal;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.journal.nn.school123.pojo.Data;
 import com.journal.nn.school123.pojo.Period;
