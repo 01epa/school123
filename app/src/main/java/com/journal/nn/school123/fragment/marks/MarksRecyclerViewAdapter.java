@@ -260,7 +260,7 @@ public class MarksRecyclerViewAdapter extends RecyclerView.Adapter<MarksRecycler
     private void setText(TextView textView,
                          String text,
                          MarksItem item) {
-        if (text == null || text.isEmpty()) {
+        if (text == null) {
             textView.setVisibility(View.GONE);
         } else {
             if (item.isHeader()) {
