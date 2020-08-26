@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-import static com.journal.nn.school123.fragment.marks.MarksRecyclerViewAdapter.YEAR_PERIOD;
+import static com.journal.nn.school123.util.CurrentPeriodUtil.YEAR_PERIOD;
 import static com.journal.nn.school123.util.CurrentPeriodUtil.getCurrentPeriod;
 
 public class PeriodJournalInfo extends AbstractPostRequest {

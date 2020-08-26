@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.journal.nn.school123.fragment.marks.MarksRecyclerViewAdapter.YEAR_PERIOD;
+import static com.journal.nn.school123.util.CurrentPeriodUtil.YEAR_PERIOD;
 import static com.journal.nn.school123.util.VersionUtil.getJsonSize;
 
 public class ClassPeriod extends AbstractPostRequest {

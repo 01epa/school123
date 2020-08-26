@@ -19,7 +19,7 @@ import java.text.DateFormatSymbols;
 import java.util.Calendar;
 import java.util.Date;
 
-import static com.journal.nn.school123.fragment.marks.MarksRecyclerViewAdapter.YEAR_PERIOD;
+import static com.journal.nn.school123.util.CurrentPeriodUtil.YEAR_PERIOD;
 import static com.journal.nn.school123.util.CurrentPeriodUtil.getPeriod;
 
 public class JournalFragment extends SwipeFragment {

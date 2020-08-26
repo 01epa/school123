@@ -3,9 +3,12 @@ package com.journal.nn.school123.fragment.marks;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.text.Html;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +22,7 @@ import com.journal.nn.school123.pojo.Mark;
 import com.journal.nn.school123.pojo.Period;
 import com.journal.nn.school123.pojo.Reason;
 import com.journal.nn.school123.pojo.Subject;
+import com.journal.nn.school123.util.CurrentPeriodUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,7 +37,6 @@ import static java.util.stream.Collectors.toMap;
 public class MarksRecyclerViewAdapter extends RecyclerView.Adapter<MarksRecyclerViewAdapter.ViewHolder> {
     private static final String MARKS_HEADER = "Оценка";
     private static final int MAX_LINES = 1;
-    public static final String YEAR_PERIOD = "360018";
     private final List<MarksItem> marksItems;
     private final MarksFragment.MarksListener mListener;
 
@@ -42,7 +45,7 @@ public class MarksRecyclerViewAdapter extends RecyclerView.Adapter<MarksRecycler
                                     @NonNull String userId,
                                     @NonNull Context context) {
         Data data = IntentHelper.getData(context, userId);
-        if (YEAR_PERIOD.equals(period.getId())) {
+        if (CurrentPeriodUtil.YEAR_PERIOD.equals(period.getId())) {
             marksItems = initTotalMarksItems(data);
         } else {
             marksItems = initMarksItems(data, period);
@@ -173,14 +176,18 @@ public class MarksRecyclerViewAdapter extends RecyclerView.Adapter<MarksRecycler
 
     private MarksItem initTotalHeaders(List<Period> periods) {
         return new MarksItem("Предмет",
-                periods.get(0).getName(),
-                periods.get(1).getName(),
-                periods.get(2).getName(),
-                periods.get(3).getName(),
-                periods.get(4).getName(),
+                getPeriodName(periods.get(0)),
+                getPeriodName(periods.get(1)),
+                getPeriodName(periods.get(2)),
+                getPeriodName(periods.get(3)),
+                getPeriodName(periods.get(4)),
                 null,
                 null,
                 true);
+    }
+
+    private String getPeriodName(Period period){
+        return period.getName().split(" ")[0];
     }
 
     private void addMark(StringBuilder builder,
@@ -253,6 +260,7 @@ public class MarksRecyclerViewAdapter extends RecyclerView.Adapter<MarksRecycler
 
     private void initTextViewHeader(TextView textView) {
         textView.setMaxLines(MAX_LINES);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setTypeface(textView.getTypeface(), Typeface.BOLD);
         textView.setTextColor(Color.WHITE);
     }

@@ -10,10 +10,13 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import static java.util.stream.Collectors.toList;
 
 public class CurrentPeriodUtil {
+    public static final String YEAR_PERIOD = "360018";
+
     public static void clearCalendar(@NonNull Calendar calendar) {
         calendar.set(Calendar.HOUR_OF_DAY, 0);
         calendar.set(Calendar.MINUTE, 0);
@@ -29,12 +32,18 @@ public class CurrentPeriodUtil {
         List<Period> periodList = data.getClassPeriods()
                 .stream()
                 .map(periods::get)
+                .filter(Objects::nonNull)
                 .filter(period -> inPeriod(currentDate, period.getFrom(), period.getTo()))
                 .collect(toList());
         for (Period period : periodList) {
-            if (currentPeriod == null || period.getTo().getTime() < currentPeriod.getTo().getTime()) {
+            if (currentPeriod == null || (period.getTo() != null && currentPeriod.getTo() != null && period.getTo().getTime() < currentPeriod.getTo().getTime())) {
                 currentPeriod = period;
             }
+        }
+        if (currentPeriod != null && (currentPeriod.getTo() == null || currentPeriod.getTo() == null)) {
+            currentPeriod = periodList.stream()
+                    .filter(period -> period.getId().equals(YEAR_PERIOD))
+                    .findAny().orElse(currentPeriod);
         }
         return currentPeriod;
     }

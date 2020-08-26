@@ -23,26 +23,27 @@ public class ClassData extends AbstractPostRequest {
         super("/act/GET_CLASS_STORE_DATA",
                 requestParameters,
                 response -> {
+                    Data data = requestParameters.getData();
+                    String classTeacher = "Не известно";
+                    String currentClass = "Не известно";
+                    String currentClassId = "Unknown";
                     JsonArray jsonArray = requestParameters.getGson().fromJson(response, JsonArray.class);
                     for (JsonElement jsonElement : jsonArray) {
                         JsonArray jsonElements = jsonElement.getAsJsonArray();
                         if (jsonElements.size() == getJsonSize(requestParameters, ClassData.class)) {
-                            Data data = requestParameters.getData();
-                            data.setClassId(jsonElements.get(0).getAsString().trim());
+                            currentClassId = jsonElements.get(0).getAsString().trim();
                             JsonElement classTeacherJsonElement = jsonElements.get(5);
-                            String classTeacher = "Не известно";
                             if (!classTeacherJsonElement.isJsonNull()) {
                                 classTeacher = classTeacherJsonElement.getAsString().trim();
                             }
-                            data.setClassTeacher(classTeacher);
-                            data.setCurrentClass(jsonElements.get(7).getAsString().trim());
-
-                            UserData userData = new UserData(requestParameters);
-                            requestParameters.getRequestQueue().add(userData);
-                            return;
+                            currentClass = jsonElements.get(7).getAsString().trim();
                         }
                     }
-                    requestParameters.getErrorListener().onErrorResponse(new VolleyError("Информация о классе не задана"));
+                    data.setClassId(currentClassId);
+                    data.setClassTeacher(classTeacher);
+                    data.setCurrentClass(currentClass);
+                    UserData userData = new UserData(requestParameters);
+                    requestParameters.getRequestQueue().add(userData);
                 }
         );
     }

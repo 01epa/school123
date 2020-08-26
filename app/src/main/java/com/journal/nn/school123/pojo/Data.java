@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
-import static com.journal.nn.school123.fragment.marks.MarksRecyclerViewAdapter.YEAR_PERIOD;
+import static com.journal.nn.school123.util.CurrentPeriodUtil.YEAR_PERIOD;
 import static com.journal.nn.school123.util.CurrentPeriodUtil.clearCalendar;
 
 public class Data implements Serializable {
