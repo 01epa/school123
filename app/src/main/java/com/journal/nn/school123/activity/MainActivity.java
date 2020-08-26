@@ -63,6 +63,7 @@ import static com.journal.nn.school123.util.CurrentPeriodUtil.clearCalendar;
 import static com.journal.nn.school123.util.CurrentPeriodUtil.getCurrentPeriod;
 import static com.journal.nn.school123.util.CurrentPeriodUtil.getPeriod;
 import static com.journal.nn.school123.util.LoginUtil.getAddress;
+import static com.journal.nn.school123.util.LoginUtil.getAllUsers;
 import static com.journal.nn.school123.util.LoginUtil.getCookie;
 import static com.journal.nn.school123.util.LoginUtil.getStudentId;
 import static com.journal.nn.school123.util.UpdateUtil.backToUsersActivity;
@@ -105,8 +106,13 @@ public class MainActivity
         actionBar = new ActionBarDrawerToggle(this, drawerLayout, R.string.Open, R.string.Close);
 
         TextView userInfoTextView = findViewById(R.id.main_user_info);
-        Data data = IntentHelper.getData(this, userId);
-        userInfoTextView.setText(data.getSecondName() + " " + data.getFirstName() + ", " + data.getCurrentClass());
+        if (getAllUsers(this).size() > 1) {
+            Data data = IntentHelper.getData(this, userId);
+            userInfoTextView.setText(data.getSecondName() + " " + data.getFirstName() + ", " + data.getCurrentClass());
+            userInfoTextView.setVisibility(View.VISIBLE);
+        } else {
+            userInfoTextView.setVisibility(View.GONE);
+        }
 
         drawerLayout.addDrawerListener(actionBar);
         actionBar.syncState();
