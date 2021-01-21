@@ -1,14 +1,6 @@
 apply plugin: 'com.android.application'
 
 android {
-    signingConfigs {
-        config {
-            keyAlias 'school123'
-            keyPassword 'fajakoo'
-            storeFile file('C:/school123/cert')
-            storePassword 'fajakoo'
-        }
-    }
     compileSdkVersion 30
     defaultConfig {
         applicationId 'com.journal.nn.school123'
@@ -23,10 +15,8 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
         }
         debug {
-            signingConfig signingConfigs.config
         }
     }
     compileOptions {
